@@ -1,0 +1,62 @@
+.sidebar {
+    font-size: 11px;
+    font-weight: 200;
+    text-transform: uppercase;
+    width: 280px;
+    height: 100%;
+    display: flex;
+    flex: 0;
+    flex-direction: column;
+    padding: 20px 0 0 50px;
+}
+
+.social a img {
+    padding: 10px 5px;
+    opacity: .5;
+}
+
+.project-navigation {
+    margin: 10px 0;
+    font-size: 12px;
+}
+
+.project-navigation .project {
+    padding: 2px 0;
+    cursor: pointer;
+}
+
+.project-navigation .project:hover {
+    font-weight: 400;
+    color: #222;
+}
+
+.project-navigation .project.selected {
+    font-weight: 400;
+    color: #222;
+}
+
+.contact {
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.about {
+    margin: 10px 0;
+}
+
+.contact:hover {
+    color: #222;
+    font-weight: 400;
+}
+
+.social {
+    margin-top: 5px;
+}
+
+.social a:first-child {
+    margin-right: 10px;
+}
+
+.social a svg {
+    fill: rgba(0, 0, 0, .64);
+}
