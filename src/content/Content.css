@@ -68,6 +68,7 @@
 }
 
 .read-more-container {
+    font-family: Crimson Text;
     display: flex;
     text-align: justify;
     width: 600px;
