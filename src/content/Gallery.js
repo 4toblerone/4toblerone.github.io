@@ -143,7 +143,7 @@ export class Gallery extends React.PureComponent {
 
     render() {
         const project = ProjectMap[this.props.project];
-        const currentImg = this.state.index;
+        const currentImg = 0;
 
         if (!project) {
             return (
@@ -170,7 +170,10 @@ export class Gallery extends React.PureComponent {
                         </Fragment>
                     ) : (
                         <Fragment>
-                            {this.renderPhoto(photo, null, false)}
+                            {project.photos.map((p) => {
+                                return this.renderPhoto(p);
+                            })}
+                           {/*// {this.renderPhoto(photo, null, false)}*/}
                             {this.renderNavigation()}
                         </Fragment>
                     )}
