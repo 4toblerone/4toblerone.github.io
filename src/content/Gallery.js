@@ -97,6 +97,32 @@ export class Gallery extends React.PureComponent {
         this.setIndex(index);
     };
 
+    preLoadImg(src) {
+        const img = new Image();
+        img.src = src;
+
+        return img;
+    }
+
+    preLoad() {
+        const project = ProjectMap[this.props.project];
+        const photos = project.photos;
+
+        const img = this.preLoadImg(photos[0]);
+
+        img.onload = () => {
+            for (let i = 1; i < photos.length; i++ ) {
+                this.preLoadImg(photos[i]);
+            }
+        };
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.project !== this.props.project) {
+            this.preLoad();
+        }
+    }
+
     toggleAbout = () => {
       this.setState((state) => {
           return {
@@ -107,6 +133,7 @@ export class Gallery extends React.PureComponent {
 
     componentDidMount(){
         document.addEventListener("keydown", this.onKey.bind(this), false);
+        this.preLoad();
     }
 
     componentWillUnmount(){
@@ -114,13 +141,12 @@ export class Gallery extends React.PureComponent {
     }
 
     onKey(event) {
-        console.log(event);
         if (event.keyCode === ArrowKeys.LEFT) {
-            return this.onPreviouse();
+            this.onPreviouse();
         }
 
         if (event.keyCode === ArrowKeys.RIGHT) {
-            return this.onNext();
+            this.onNext();
         }
     }
 
@@ -143,7 +169,7 @@ export class Gallery extends React.PureComponent {
 
     render() {
         const project = ProjectMap[this.props.project];
-        const currentImg = 0;
+        const currentImg = this.state.index;
 
         if (!project) {
             return (
@@ -154,29 +180,24 @@ export class Gallery extends React.PureComponent {
         const photo = project.photos[currentImg];
         const aboutExists = project.about && project.about.length > 0;
 
-        console.log('about ', );
         return (
             <div className="gallery">
                 <Desktop>
                     {this.state.showAbout && aboutExists ? (
                         <Fragment>
                             <div className="read-more-container">
-                                {project.about}
+                                <div dangerouslySetInnerHTML={{ __html: project.about }} />
                                 <div className="back-to-project" onClick={this.toggleAbout}>
                                     Back to Project
                                 </div>
                             </div>
-                            {this.renderNavigation()}
                         </Fragment>
                     ) : (
                         <Fragment>
-                            {project.photos.map((p) => {
-                                return this.renderPhoto(p);
-                            })}
-                           {/*// {this.renderPhoto(photo, null, false)}*/}
-                            {this.renderNavigation()}
+                            {this.renderPhoto(photo, null, false)}
                         </Fragment>
                     )}
+                    {this.renderNavigation()}
                 </Desktop>
                <Mobile>
                    {aboutExists && (
