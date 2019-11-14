@@ -36,6 +36,20 @@
     height: 100%;
     object-fit: contain;
     object-position: 50% 0;
+
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 200ms;
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .gallery .photo.reverse img {
