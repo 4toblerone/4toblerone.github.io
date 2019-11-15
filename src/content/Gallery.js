@@ -161,8 +161,12 @@ export class Gallery extends React.PureComponent {
     renderNavigation() {
         return (
             <div className="navigation">
-                <div className={'read-more-info'} onClick={this.toggleAbout} >Project Info</div>
-                <span onClick={this.onPreviouse}> &#60; <span>prev</span> </span><span onClick={this.onNext}> <span>next</span> ></span>
+                <div className={'read-more-info'} onClick={this.toggleAbout} >Project info</div>
+                <span onClick={this.onPreviouse}>
+                    <span>prev</span> </span>
+                <span>/ </span>
+                <span onClick={this.onNext}>
+                    <span>next</span> </span>
             </div>
         );
     }
