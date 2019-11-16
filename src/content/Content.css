@@ -95,8 +95,7 @@
 
 .read-more-info {
     cursor: pointer;
-    margin-bottom: 10px;
-    font-size: 15px;
+    margin-bottom: 15px;
     font-weight: 400;
 }
 
@@ -109,6 +108,7 @@
     align-self: flex-end;
     font-weight: 500;
     text-decoration: underline;
+    margin-top: 50px;
 }
 
 .about-me {
