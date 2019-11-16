@@ -62,7 +62,7 @@
     position: fixed;
     bottom: 50px;
     left: 50px;
-    font-size: 15px;
+    font-weight: 400;
 }
 
 .navigation span {
@@ -96,6 +96,7 @@
     cursor: pointer;
     margin-bottom: 10px;
     font-size: 15px;
+    font-weight: 400;
 }
 
 .read-more-info:hover {
