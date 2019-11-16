@@ -77,6 +77,8 @@
     font-size: 15px;
     margin-bottom: 20px;
     cursor: pointer;
+    text-align: justify;
+    white-space: pre-line;
 }
 
 .description .read-more-button {
