@@ -6,11 +6,15 @@ import {
     useLocation
 } from "react-router-dom";
 
+import Mirage from '../projects/mirage';
+import SlowSide from '../projects/slow-side';
+
 import InstagramIcon from '@material-ui/icons/Instagram';
 import TwitterIcon from '@material-ui/icons/Twitter';
 
 function ProjectNav() {
-    const projects = ['mirage', 'slow-side'];
+    const projects = {'mirage': Mirage,
+                      'slow-side': SlowSide};
     const location = useLocation();
 
     return (
@@ -19,13 +23,14 @@ function ProjectNav() {
            {/*    <Link to={'/'}>About</Link>*/}
            {/*</div>*/}
            <div className="project-navigation">
-               {projects.map((p, i) => {
-                   const projectLink = `/${p}`;
+               {Object.entries(projects).map((entry, index) => {
+                   const projectLink = `/${entry[0]}`;
                    const selected = projectLink === location.pathname;
+                   const project = entry[1];
 
                    return (
-                       <div key={i} className={`project ${selected ? 'selected' : ''}`}>
-                           <Link to={projectLink}>{p}</Link>
+                       <div key={index} className={`project ${selected ? 'selected' : ''}`}>
+                           <Link to={projectLink}>{project.name}</Link>
                        </div>
                    );
                })}
@@ -33,6 +38,7 @@ function ProjectNav() {
        </Fragment>
     )
 }
+
 
 function Contact() {
     const [contactVisible, setContactVisible] = useState(false);

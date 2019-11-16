@@ -23,5 +23,6 @@
     "http://fractalcastle.s3.amazonaws.com/slow-side/gummyshark",
     "http://fractalcastle.s3.amazonaws.com/slow-side/fries",
     "http://fractalcastle.s3.amazonaws.com/slow-side/goingback"
-  ]
+  ],
+  "name": "Slow Side"
 }

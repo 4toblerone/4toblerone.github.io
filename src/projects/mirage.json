@@ -33,5 +33,6 @@
     "http://fractalcastle.s3.amazonaws.com/mirage/statuetouch",
     "http://fractalcastle.s3.amazonaws.com/mirage/dots",
     "http://fractalcastle.s3.amazonaws.com/mirage/lamp"
-  ]
+  ],
+  "name": "Mirage"
 }

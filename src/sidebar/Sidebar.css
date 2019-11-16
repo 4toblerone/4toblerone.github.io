@@ -1,7 +1,6 @@
 .sidebar {
-    font-size: 11px;
+    font-size: 15px;
     font-weight: 200;
-    text-transform: uppercase;
     width: 280px;
     height: 100%;
     display: flex;
@@ -17,7 +16,7 @@
 
 .project-navigation {
     margin: 10px 0;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .project-navigation .project {
