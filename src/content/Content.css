@@ -75,7 +75,7 @@
 
 .description {
     font-size: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     cursor: pointer;
 }
 
@@ -90,6 +90,7 @@
     text-align: justify;
     width: 600px;
     flex-direction: column;
+    white-space: pre-line;
 }
 
 .read-more-info {

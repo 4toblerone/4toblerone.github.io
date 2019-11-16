@@ -190,7 +190,7 @@ export class Gallery extends React.PureComponent {
                     {this.state.showAbout && aboutExists ? (
                         <Fragment>
                             <div className="read-more-container">
-                                <div dangerouslySetInnerHTML={{ __html: project.about }} />
+                                {project.about}
                                 <div className="back-to-project" onClick={this.toggleAbout}>
                                     Back to Project
                                 </div>
