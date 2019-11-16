@@ -70,8 +70,6 @@
 }
 
 .navigation span:hover span {
-    /*color: #222;*/
-    font-weight: 400;
     color: #222;
 }
 
@@ -96,7 +94,6 @@
 
 .read-more-info {
     cursor: pointer;
-    font-weight: 500;
     margin-bottom: 10px;
     font-size: 15px;
 }
